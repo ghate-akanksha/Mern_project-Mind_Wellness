@@ -1,0 +1,174 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+    background: #f4f7fb;
+    color: #1f2a44;
+    line-height: 1.7;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #566a6e;
+}
+
+/* Nav links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #34495e;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: hsl(180, 96%, 63%);
+}
+
+.nav-links a.active {
+    color: #275389;
+    border-bottom: 2px solid #44e5e5;
+}
+
+/* Self Assessment */
+.assessment-btn {
+    padding: 7px 14px;
+    border-radius: 18px;
+    background: #e8f8f5;
+    color: #50615e;
+    font-weight: 600;
+}
+
+.assessment-btn:hover {
+    background: #3f746a;
+    color: #ffffff;
+}
+
+/* Login button */
+.login-btn {
+    background: #313557;
+    color: #ffffff !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.login-btn:hover {
+    background: #6a7bb7;
+}
+
+/* ================= BLOG ================= */
+.blog-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.blog-header h1 {
+    font-size: 32px;
+    color: #1f3a5f;
+}
+
+.blog-header p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+/* Blog List */
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Blog Card */
+.blog-card {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Content */
+.blog-content h2 {
+    color: #2d494f;
+    margin-bottom: 12px;
+}
+
+.blog-text,
+.blog-more {
+    color: #4b5563;
+    font-size: 15px;
+}
+
+/* Hidden content */
+.blog-more {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Read more */
+.read-more {
+    display: inline-block;
+    margin-top: 12px;
+    color: #2a3071;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Blog links */
+.blog-more a {
+    color: #0f2950;
+    font-weight: 500;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-btn,
+.logout-btn {
+  margin-left: 0;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mental Wellness Assessment</title>
+    <link rel="stylesheet" href="selfAssessment.css">
+</head>
+<body>
+<div class="navbar">
+    <div class="nav-container">
+        <div class="logo">Mind Wellness</div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="selfAssessment.html" class="assessment-btn">Self Assessment</a>
+            <a href="appointment.html" class="active">Appointment</a>
+            <a href="login.html" class="login-btn" id="loginBtn">Login</a>
+<button class="logout-btn" id="logoutBtn" onclick="logout()">Logout</button>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h2>Mental Wellness Self-Assessment</h2>
+
+    <form id="assessmentForm">
+        <!-- Questions injected by JS -->
+    </form>
+
+    <button type="button" onclick="submitAssessment()">Submit Assessment</button>
+</div>
+
+<script src="selfAssessment.js"></script>
+</body>
+</html>

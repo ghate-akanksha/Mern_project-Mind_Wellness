@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Mind Wellness</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">Mind Wellness</div>
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="assessment.html">Self Assessment</a>
+        <a href="appointment.html">Appointment</a>
+       <a href="login.html" class="login-btn" id="loginBtn">Login</a>
+<button class="logout-btn" id="logoutBtn" onclick="logout()">Logout</button>
+
+    </div>
+</div>
+
+<!-- Main Container -->
+<div class="about-container">
+
+    <!-- Header -->
+    <div class="about-header">
+        <h1>About Mind Wellness</h1>
+        <p>A platform created to support mental well-being and emotional balance</p>
+    </div>
+
+    <!-- Aim -->
+    <div class="about-box">
+        <h2>Our Aim</h2>
+        <p>
+            The primary aim of the Mind Wellness platform is to promote mental
+            well-being by providing a safe, supportive, and easy-to-use digital space.
+            This platform encourages users to understand their mental health,
+            reduce stress, and maintain emotional stability in their daily lives.
+        </p>
+    </div>
+
+    <!-- Why Created -->
+    <div class="about-box">
+        <h2>Why Mind Wellness Was Created</h2>
+        <p>
+            In today’s fast-paced world, people often experience stress, anxiety,
+            and emotional pressure due to academic, professional, and personal
+            responsibilities. Unfortunately, mental health is often ignored or
+            misunderstood.
+        </p>
+        <p>
+            Mind Wellness was created to bridge this gap by offering a platform
+            where users can focus on their mental health just as seriously as
+            their physical health. The goal is to make mental wellness
+            accessible, approachable, and stigma-free.
+        </p>
+    </div>
+
+    <!-- Vision -->
+    <div class="about-box">
+        <h2>Our Vision</h2>
+        <p>
+            Our vision is to create a healthier society where mental wellness is
+            given equal importance. Mind Wellness aims to empower individuals
+            with awareness, self-care tools, and positive habits that lead to
+            long-term emotional well-being.
+        </p>
+    </div>
+
+</div>
+<script>
+  // Protect page
+  if (!localStorage.getItem("token")) {
+    window.location.href = "login.html";
+  }
+
+  const loginBtn = document.getElementById("loginBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  // On protected pages → show logout only
+  loginBtn.style.display = "none";
+  logoutBtn.style.display = "inline-block";
+
+  function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
+  }
+</script>
+
+
+</body>
+</html>

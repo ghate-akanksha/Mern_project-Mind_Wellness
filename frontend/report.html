@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assessment Result | Mind Wellness</title>
+    <link rel="stylesheet" href="report.css">
+</head>
+<body>
+
+<!-- Navbar (same as other pages) -->
+<div class="navbar">
+    <div class="nav-container">
+        <div class="logo">Mind Wellness</div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="selfAssessment.html" class="assessment-btn">Self Assessment</a>
+            <a href="appointment.html">Appointment</a>
+        </div>
+    </div>
+</div>
+
+<!-- Result Card -->
+<div class="result-container">
+    <h2>Your Mental Wellness Report</h2>
+
+    <div class="score-box">
+        <p>Your Score</p>
+        <h1 id="scoreValue">0</h1>
+    </div>
+
+    <div class="report-box">
+        <h3>Status</h3>
+        <p id="statusText"></p>
+
+        <h3>Recommendation</h3>
+        <p id="recommendationText"></p>
+    </div>
+
+    <a href="appointment.html" class="action-btn">
+        Book a Counseling Session
+    </a>
+</div>
+<button class="pdf-btn" onclick="downloadPDF()">
+    Download Report (PDF)
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="report.js"></script>
+
+</body>
+</html>

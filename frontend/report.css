@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1e293b;
+    padding: 12px 0;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #e5e7eb;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+.assessment-btn {
+    background-color: #22c55e;
+    color: white;
+}
+
+/* RESULT SECTION */
+.result-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.result-container h2 {
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+/* SCORE BOX */
+.score-box {
+    background: linear-gradient(135deg, #38bdf8, #22c55e);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.score-box h1 {
+    font-size: 48px;
+    margin: 10px 0 0;
+}
+
+/* REPORT */
+.report-box {
+    text-align: left;
+}
+
+.report-box h3 {
+    margin-top: 15px;
+    color: #1e293b;
+}
+
+.report-box p {
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* ACTION BUTTON */
+.action-btn {
+    display: inline-block;
+    margin-top: 25px;
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.action-btn:hover {
+    background-color: #2563eb;
+}
+.pdf-btn {
+    margin-top: 20px;
+    padding: 12px 22px;
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.pdf-btn:hover {
+    background-color: #16a34a;
+}

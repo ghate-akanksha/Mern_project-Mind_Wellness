@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Wellness | Home</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="nav-container">
+        <div class="logo">Mind Wellness</div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="selfAssessment.html" class="assessment-btn">Self Assessment</a>
+            <a href="appointment.html">Appointment</a>
+           <a href="login.html" class="login-btn" id="loginBtn">Login</a>
+<button class="logout-btn" id="logoutBtn" onclick="logout()">Logout</button>
+
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Your Mental Health Matters</h1>
+        <p>
+            Mind Wellness is a digital platform designed to support emotional
+            well-being, reduce stress, and promote a balanced lifestyle.
+        </p>
+        <a href="appointment.html" class="cta-btn">Book an Appointment</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+
+    <div class="feature-card">
+        <h2>Professional Support</h2>
+        <p>
+            Connect with mental wellness professionals and receive
+            personalized guidance in a safe environment.
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <h2>Wellness Resources</h2>
+        <p>
+            Access blogs, tips, and articles that help you understand
+            and improve your mental health.
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <h2>Easy Appointments</h2>
+        <p>
+            Schedule sessions effortlessly with our simple
+            and user-friendly appointment booking system.
+        </p>
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2025 Mind Wellness | Designed & Developed by Akanksha</p>
+</footer>
+<script>
+  // Protect page
+  if (!localStorage.getItem("token")) {
+    window.location.href = "login.html";
+  }
+
+  const loginBtn = document.getElementById("loginBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  // On protected pages → show logout only
+  loginBtn.style.display = "none";
+  logoutBtn.style.display = "inline-block";
+
+  function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
+  }
+</script>
+
+
+
+</body>
+</html>

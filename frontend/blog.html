@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Mind Wellness</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+    <div class="nav-container">
+        <div class="logo">Mind Wellness</div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="selfAssessment.html" class="assessment-btn">Self Assessment</a>
+            <a href="appointment.html">Appointment</a>
+           <a href="login.html" class="login-btn" id="loginBtn">Login</a>
+<button class="logout-btn" id="logoutBtn" onclick="logout()">Logout</button>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="blog-container">
+
+    <div class="blog-header">
+        <h1>Mind Wellness Blog</h1>
+        <p>Insights, tips, and guidance for a healthier mind</p>
+    </div>
+
+    <div class="blog-list">
+
+        <!-- Blog 1 -->
+        <div class="blog-card">
+            <div class="blog-content">
+                <h2>Understanding Mental Health</h2>
+
+                <p class="blog-text">
+                    Mental health affects how we think, feel, and act in everyday life.
+                    It influences how we handle stress, relate to others, and make decisions.
+                </p>
+
+                <p class="blog-more">
+                    Good mental health isn’t just the absence of mental illness.
+                    It also includes emotional balance, resilience, and the ability
+                    to cope with life’s challenges while maintaining a sense of purpose
+                    and well-being.
+                </p>
+
+                <a href="javascript:void(0)" class="read-more" onclick="toggleContent(this)">
+                    Read More
+                </a>
+            </div>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="blog-card">
+            <div class="blog-content">
+                <h2>Managing Stress in Daily Life</h2>
+
+                <p class="blog-text">
+                    Stress is a natural part of life, but when it becomes overwhelming,
+                    it can affect both mental and physical well-being.
+                </p>
+
+                <p class="blog-more">
+                    Managing stress effectively starts with small, consistent habits.
+                    Practices like mindfulness, regular exercise, quality sleep,
+                    and setting healthy boundaries can significantly reduce stress.
+                    <br><br>
+                    Learn more:
+                    <a href="https://www.helpguide.org/mental-health/stress/stress-management" target="_blank">
+                        Stress Management
+                    </a>
+                </p>
+
+                <a href="javascript:void(0)" class="read-more" onclick="toggleContent(this)">
+                    Read More
+                </a>
+            </div>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="blog-card">
+            <div class="blog-content">
+                <h2>The Importance of Self-Care</h2>
+
+                <p class="blog-text">
+                    Self-care is the practice of intentionally taking care of your
+                    mental, emotional, and physical well-being.
+                </p>
+
+                <p class="blog-more">
+                    It includes healthy routines, mindfulness, rest, and emotional
+                    boundaries. Regular self-care helps prevent burnout, improves
+                    resilience, and supports long-term mental health.
+                    <br><br>
+                    Explore:
+                    <a href="https://www.wysa.io/" target="_blank">Self Care Resources</a>
+                </p>
+
+                <a href="javascript:void(0)" class="read-more" onclick="toggleContent(this)">
+                    Read More
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+  // Protect page
+  if (!localStorage.getItem("token")) {
+    window.location.href = "login.html";
+  }
+
+  const loginBtn = document.getElementById("loginBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  // On protected pages → show logout only
+  loginBtn.style.display = "none";
+  logoutBtn.style.display = "inline-block";
+
+  function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
+  }
+</script>
+
+
+<script src="blog.js"></script>
+</body>
+</html>

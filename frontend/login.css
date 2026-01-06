@@ -1,0 +1,151 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+
+/* ================= BODY ================= */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2f3c48, #00f2fe);
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #527da2;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin-left: 24px;
+    text-decoration: none;
+    color: #5C6F8E;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3ab7b1;
+}
+
+.nav-links a.active {
+    color: #527da2;
+    border-bottom: 2px solid #11b7c6;
+    padding-bottom: 4px;
+}
+
+/* ================= FORM WRAPPER ================= */
+.form-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px; /* space for navbar */
+}
+
+/* ================= LOGIN CONTAINER ================= */
+.container {
+    background: #ffffff;
+    width: 360px;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    color: #1F2A44;
+}
+
+/* Inputs */
+.container input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+}
+
+.container input:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 6px rgba(79, 172, 254, 0.5);
+}
+
+/* Button */
+.container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #4facfe;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background: #3b9bf3;
+}
+
+/* Text */
+.container p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.container a {
+    color: #4facfe;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Message */
+#message {
+    margin-top: 10px;
+    font-size: 14px;
+}
