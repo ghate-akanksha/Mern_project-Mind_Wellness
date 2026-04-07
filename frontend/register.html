@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
 <header class="navbar">
     <div class="nav-container">
         <div class="logo">Mind Wellness</div>
@@ -16,36 +15,33 @@
             <a href="home.html">Home</a>
             <a href="about.html">About</a>
             <a href="blog.html">Blog</a>
-            <!-- <a href="selfAssessment.html" class="assessment-btn">Self Assessment</a> -->
-            <!-- <a href="appointment.html">Appointment</a> -->
             <a href="login.html" class="login-btn">Login</a>
         </nav>
     </div>
 </header>
 
-<!-- ================= FORM WRAPPER ================= -->
 <main class="form-wrapper">
     <div class="container">
         <h2>Register</h2>
 
+        <!-- ✅ ONLY this form (no onsubmit, no onclick) -->
         <form id="registerForm">
-            <!-- ✅ FIXED ID -->
             <input type="text" id="fullName" placeholder="Full Name" required>
-
             <input type="email" id="email" placeholder="Email" required>
-
             <input type="password" id="password" placeholder="Password" required>
-
             <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
 
             <button type="submit">Register</button>
             <p>Already have an account? <a href="login.html">Login</a></p>
         </form>
 
-        <p id="message"></p>
+        <!-- ✅ FIX: use 'error' id (matches JS) -->
+        <p id="error" style="color:red;"></p>
     </div>
 </main>
 
+<!-- ✅ ONLY ONE script -->
 <script src="register.js"></script>
+
 </body>
 </html>

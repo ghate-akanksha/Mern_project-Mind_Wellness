@@ -40,42 +40,68 @@
 // });
 
 
-const form = document.getElementById("registerForm");
+document.addEventListener("DOMContentLoaded", () => {
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+  const form = document.getElementById("registerForm");
 
-  const fullName = document.getElementById("fullName").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirmPassword").value;
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  try {
-    const res = await fetch("http://localhost:5000/api/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        fullName,
-        email,
-        password,
-        confirmPassword
-      })
-    });
+    const fullName = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
+    const error = document.getElementById("error");
 
-    const data = await res.json();
+    console.log("SENDING 👉", { fullName, email, password, confirmPassword });
 
-    if (!res.ok) {
-      document.getElementById("error").innerText = data.message;
+    error.innerText = "";
+
+    if (!fullName || !email || !password || !confirmPassword) {
+      error.innerText = "All fields are required";
       return;
     }
 
-    alert("Registration successful!");
-    window.location.href = "login.html";
+    if (password !== confirmPassword) {
+      error.innerText = "Passwords do not match";
+      return;
+    }
 
-  } catch (error) {
-    console.error(error);
-    document.getElementById("error").innerText = "Server error";
-  }
+    if (password.length < 6) {
+      error.innerText = "Password must be at least 6 characters";
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          fullName,
+          email,
+          password,
+          confirmPassword
+        })
+      });
+
+      const data = await res.json();
+      console.log("RESPONSE 👉", data);
+
+      if (!res.ok) {
+        error.innerText = data.message || "Registration failed";
+        return;
+      }
+
+      alert("Registration successful ✅");
+      window.location.href = "login.html";
+
+    } catch (err) {
+      console.error(err);
+      error.innerText = "Server error";
+    }
+
+  });
+
 });
