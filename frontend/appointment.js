@@ -29,6 +29,12 @@
 
 const form = document.getElementById("bookingForm");
 const successMsg = document.getElementById("successMsg");
+const submitBtn = document.getElementById("submitBtn");
+
+// ✅ Prevent past date
+const dateInput = document.getElementById("date");
+const today = new Date().toISOString().split("T")[0];
+dateInput.setAttribute("min", today);
 
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
@@ -41,19 +47,37 @@ form.addEventListener("submit", async function (e) {
   const sessionType = document.getElementById("session").value;
   const message = document.getElementById("message").value.trim();
 
+  // ✅ Validation
   if (!fullName || !email || !phoneNumber || !preferredDate || !preferredTime || !sessionType) {
-    alert("Please fill all required fields");
+    successMsg.innerText = "❌ Please fill all required fields";
+    successMsg.style.color = "red";
+    return;
+  }
+
+  if (!email.includes("@")) {
+    successMsg.innerText = "❌ Invalid email format";
+    successMsg.style.color = "red";
+    return;
+  }
+
+  if (phoneNumber.length !== 10) {
+    successMsg.innerText = "❌ Phone number must be 10 digits";
+    successMsg.style.color = "red";
     return;
   }
 
   const token = localStorage.getItem("token");
+
+  // ✅ Disable button (prevent multiple clicks)
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Booking...";
 
   try {
     const response = await fetch("http://localhost:5000/api/appointments/book", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`   // 🔥 VERY IMPORTANT
+        "Authorization": `Bearer ${token}`
       },
       body: JSON.stringify({
         fullName,
@@ -69,15 +93,36 @@ form.addEventListener("submit", async function (e) {
     const data = await response.json();
 
     if (!response.ok) {
-      alert(data.message || "Booking failed");
+      successMsg.innerText = `❌ ${data.message || "Booking failed"}`;
+      successMsg.style.color = "red";
+
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Book Appointment";
       return;
     }
 
-    successMsg.innerText = "✅ Appointment booked successfully!";
+    // ✅ Success
+    successMsg.innerText = "✅ Appointment booked! Confirmation email sent.";
+    successMsg.style.color = "green";
+
     form.reset();
+
+    // Reset button
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Book Appointment";
+
+    // Clear message after 5 sec
+    setTimeout(() => {
+      successMsg.innerText = "";
+    }, 5000);
 
   } catch (error) {
     console.error(error);
-    alert("Server error");
+
+    successMsg.innerText = "❌ Server error. Please try again.";
+    successMsg.style.color = "red";
+
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Book Appointment";
   }
 });
